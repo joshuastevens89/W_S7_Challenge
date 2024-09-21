@@ -14,7 +14,18 @@ describe('Sprint 7 Challenge Learner Tests', () => {
     [4] sum('1', 2) // returns 3
     [5] sum('10', '3') // returns 13
   */
-
+    describe('sum function', () => {
+      test('throws an error for invalid inputs', () => {
+        expect(() => sum()).toThrow('pass valid numbers');
+        expect(() => sum(2, 'seven')).toThrow('pass valid numbers');
+      });
+    
+      test('returns correct sum for valid inputs', () => {
+        expect(sum(1, 3)).toBe(4);
+        expect(sum('1', 2)).toBe(3);
+        expect(sum('10', '3')).toBe(13);
+      });
+    });
   /*
   👉 TASK 2 - Integration Testing of HelloWorld component at the bottom of this module
 
